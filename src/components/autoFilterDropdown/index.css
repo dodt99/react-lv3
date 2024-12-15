@@ -1,0 +1,46 @@
+.auto-filter {
+  width: fit-content;
+  position: relative;
+}
+
+.auto-filter .dropdown {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  padding: 4px;
+  max-height: 212px;
+  border: 1px solid #e2e8f0;
+  box-sizing: border-box;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+}
+
+.auto-filter .dropdown .dropdown-list {
+  padding: 0;
+  margin: 0;
+  color: #334155;
+}
+
+.auto-filter .dropdown .dropdown-list .dropdown-item {
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  scroll-margin-top: 4px;
+  scroll-margin-bottom: 4px;
+}
+.auto-filter .dropdown .dropdown-list .dropdown-item.focused {
+  color: #1e293b;
+  background: #f1f5f9;
+}
+
+.auto-filter .loading,
+.auto-filter .no-data {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #334155;
+}
