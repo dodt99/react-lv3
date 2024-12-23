@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { createPortal } from "react-dom";
 
 import "./index.css";
@@ -18,7 +17,6 @@ const Dialog = ({
   content,
   children,
   footer,
-  closeOnEscape = true,
   dismissableMask = false,
   maskStyle,
   maskClass = "",
@@ -40,22 +38,6 @@ const Dialog = ({
       onClose();
     }
   };
-
-  useEffect(() => {
-    if (!open) return;
-
-    const handleKeyDown = (e) => {
-      if (e.code === "Escape" && closeOnEscape && onClose) {
-        onClose();
-      }
-    };
-
-    window.document.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [open, closeOnEscape, onClose]);
 
   return (
     open &&
