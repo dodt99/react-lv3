@@ -61,6 +61,7 @@ const Dialog = ({
     open &&
     createDialog(
       <div
+        key={"dialog-mask"} // Add key to prevent other portals rerender
         onClick={onMaskClick}
         style={maskStyle}
         className={`dialog-mask ${modal ? "modal" : ""} ${maskClass}`}
